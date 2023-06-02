@@ -1,6 +1,6 @@
-# 🚀 BDS Dynamic Site
+# 🚀 NEXTJS LANDING SITE GENERATOR
 
-Binary Development Studios
+NEXTJS LANDING SITE GENERATOR
 
 ## Getting Started
 
@@ -14,11 +14,6 @@ yarn dev
 pnpm dev
 ```
 
-## IMP
-For Captcha
-https://www.google.com/recaptcha/admin/create
+## OFFICIAL DOCS OF NEXTJS
 
-## TODO
-- Take htmlId of each section from backend
-- Dynamic Navigation Manu
-- Dynamic Footer Menu
+https://nextjs.org/
