@@ -1,25 +1,22 @@
-import React from "react";
-import { Tabs, Typography, theme } from "antd";
-import { useAppSelector } from "@/store";
-import TabContent from "./tabs/tabcontent";
-import { getFilePath } from "@/utils";
-import { SECTIONBLOCK } from "@/constants/sectionsList";
+import { SECTIONBLOCK } from "@/constants/sectionsList"
+import { useAppSelector } from "@/store"
+import { Tabs, Typography, theme } from "antd"
+import React from "react"
+import TabContent from "./tabs/tabcontent"
 
 export default function WhatWeBuild() {
-  const { token } = theme.useToken();
-  const whatWeBuild = useAppSelector(
-    (state) => state.site.sectionsSettings[SECTIONBLOCK.WHATWEBUILD]
-  );
+  const { token } = theme.useToken()
+  const whatWeBuild = useAppSelector((state) => state.site.sectionsSettings[SECTIONBLOCK.WHATWEBUILD])
 
   if (!whatWeBuild.display) {
-    return null;
+    return null
   }
 
-  const technologies: any[] = whatWeBuild?.technologies || [];
+  const technologies: any[] = whatWeBuild?.technologies || []
   return (
     <React.Fragment>
       <div
-        id={whatWeBuild.htmlId||"whatwebuild"}
+        id={whatWeBuild.htmlId || "whatwebuild"}
         style={{
           backgroundColor: "#0b163f",
           paddingTop: 64,
@@ -35,9 +32,7 @@ export default function WhatWeBuild() {
               alignItems: "center",
             }}
           >
-            <Typography.Title
-              style={{ fontFamily: "Jost", color: "#fff", textAlign: "center" }}
-            >
+            <Typography.Title style={{ fontFamily: "Jost", color: "#fff", textAlign: "center" }}>
               {whatWeBuild?.heading ? (
                 <span
                   dangerouslySetInnerHTML={{
@@ -76,7 +71,7 @@ export default function WhatWeBuild() {
             <Tabs
               centered
               items={technologies.map((tab, index) => {
-                const id = String(index + 1);
+                const id = String(index + 1)
 
                 return {
                   label: (
@@ -88,10 +83,7 @@ export default function WhatWeBuild() {
                         gap: "2px",
                       }}
                     >
-                      <span
-                        className="material-symbols-outlined"
-                        style={{ fontSize: 20 }}
-                      >
+                      <span className="material-symbols-outlined" style={{ fontSize: 20 }}>
                         {tab.mdIcon}
                       </span>
                       <span>{tab.title}</span>
@@ -106,12 +98,12 @@ export default function WhatWeBuild() {
                       keyPoints={tab?.contentKeyPoints?.split?.(",")}
                     />
                   ),
-                };
+                }
               })}
             />
           </div>
         </div>
       </div>
     </React.Fragment>
-  );
+  )
 }
