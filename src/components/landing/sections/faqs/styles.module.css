@@ -1,0 +1,29 @@
+.faqsCollapse .faqsHeader {
+  position: relative;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.faqsCollapse .faqsHeader:after {
+  content: '';
+  /* background-color: ${theme.palette.primary.main}; */
+  height: 1px;
+  width: 0%;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.faqsCollapse .faqsHeader:hover {
+  /* color: ${theme.palette.primary.main} !important; */
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.faqsCollapse .faqsHeader:hover:after {
+  width: 100%;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
